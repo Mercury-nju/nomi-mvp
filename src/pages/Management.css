@@ -1,0 +1,222 @@
+.management-page { max-width: 1260px; margin: 0 auto; }
+.management-page .page-header { margin-bottom: 30px; }
+.management-page .page-header > .badge { align-self: center; }
+.management-section-heading { display: flex; align-items: center; justify-content: space-between; margin: 30px 0 16px; }
+.management-section-heading .section-title { margin: 0; font-size: 15px; }
+.management-section-heading .section-title > span { margin-left: 8px; color: #8f98a9; font-size: 13px; font-weight: 500; }
+.management-section-heading > .muted { font-size: 12px; }
+.account-overview { display: grid; grid-template-columns: 1fr 1fr 1fr 1.65fr; padding: 26px 29px; }
+.account-overview-item { display: flex; flex-direction: column; gap: 10px; padding-left: 27px; border-left: 1px solid #e9e6de; }
+.account-overview-item:first-child { padding-left: 0; border-left: 0; }
+.overview-label { color: #7b8495; font-size: 12px; }
+.account-overview-item > strong { color: #263143; font-size: 27px; font-weight: 600; line-height: 1.2; letter-spacing: -.8px; }
+.account-overview-item small { color: #98a0ae; font-size: 14px; font-weight: 400; letter-spacing: 0; }
+.account-overview-note { display: flex; align-items: center; justify-content: center; gap: 12px; color: #292824; padding-left: 24px; border-left: 1px solid #e9e6de; }
+.account-overview-note > div { display: flex; flex-direction: column; gap: 7px; }
+.account-overview-note b { font-size: 13px; color: #48566c; font-weight: 500; }
+.account-overview-note span { color: #929baa; font-size: 11px; }
+.account-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 19px; }
+.account-card { padding: 24px 24px 0; overflow: hidden; display: flex; flex-direction: column; }
+.account-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 21px; }
+.account-avatar { width: 49px; height: 49px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 600; }
+.account-card .status-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; display: inline-block; margin: 0; box-shadow: none; }
+.account-card h3 { font-size: 16px; margin: 0 0 8px; font-weight: 600; color: #253044; }
+.account-handle { color: #949ca9; font-size: 11px; margin: 0; overflow-wrap: anywhere; }
+.account-task-count { display: flex; gap: 22px; font-size: 11px; color: #8590a0; margin: 25px 0; }
+.account-task-count b { color: #4d596d; font-weight: 600; margin-left: 8px; }
+.account-quota { padding: 18px 0 12px; border-top: 1px solid #e9e6de; }
+.account-quota > div:first-child { display: flex; justify-content: space-between; align-items: center; }
+.account-quota > div > span { color: #788395; font-size: 11px; }
+.account-quota strong { color: #2b374e; font-size: 20px; font-weight: 600; }
+.account-quota strong small { color: #9aa2af; font-size: 11px; font-weight: 400; }
+.quota-track { width: 100%; height: 5px; background: #eff2f7; border-radius: 5px; margin: 13px 0 9px; overflow: hidden; }
+.quota-track > span { display: block; height: 100%; background: #292824; border-radius: 5px; }
+.account-quota p { color: #a0a7b3; font-size: 10px; display: flex; justify-content: space-between; margin: 0; }
+.account-allocation { background: #fff; display: flex; align-items: center; justify-content: space-between; padding: 11px 12px; margin: 8px 0 18px; border-radius: 6px; font-size: 10px; color: #8792a2; }
+.account-allocation b { color: #59657b; font-weight: 500; }
+.account-offline-note { color: #bc8c45; font-size: 10px; line-height: 1.7; margin: -7px 0 15px; }
+.account-card-actions { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid #e9e6de; margin-top: auto; gap: 10px; }
+.account-card-actions .button { font-size: 11px; padding: 7px 9px; min-height: 31px; }
+.account-card-actions .button:first-child { margin-left: -9px; }
+.account-card-actions .button.ghost { color: #738098; }
+.account-card-offline .account-avatar { filter: saturate(.6); }
+.management-footnote { display: flex; align-items: flex-start; justify-content: center; gap: 7px; font-size: 11px; color: #9aa3b1; line-height: 1.8; margin-top: 25px; }
+.management-footnote svg { flex-shrink: 0; margin-top: 2px; }
+.management-footnote a { color: #77736b; text-decoration: none; }
+.inline-note { color: #b17f36; background: #fffbf2; padding: 12px 16px; font-size: 12px; border-radius: 7px; }
+.connection-modal { max-width: 500px; }
+.management-page .modal h2 { font-size: 19px; margin: 6px 0 0; }
+.management-page .modal .eyebrow { font-size: 10px; }
+.management-page .modal .modal-header { align-items: flex-start; }
+.dialog-description { color: #7a8495; font-size: 13px; line-height: 1.9; margin: 20px 0 24px; }
+.demo-connection-note { display: flex; gap: 11px; align-items: flex-start; padding: 15px; background: #fff; border: 1px solid #efeee9; border-radius: 9px; color: #292824; margin: 20px 0; }
+.demo-connection-note svg { flex-shrink: 0; margin-top: 1px; }
+.demo-connection-note b { font-size: 12px; color: #5f5b53; font-weight: 500; }
+.demo-connection-note p { margin: 7px 0 0; color: #8492aa; font-size: 11px; line-height: 1.8; }
+.management-checkbox { display: flex; gap: 9px; font-size: 12px; line-height: 1.7; align-items: flex-start; color: #6b778c; margin: 22px 0 15px; cursor: pointer; }
+.management-checkbox input { accent-color: #292824; margin-top: 4px; }
+.management-page .form-help { font-size: 11px; color: #98a2b3; line-height: 1.8; grid-column: 1/-1; margin: 0; }
+.form-error { color: #cc5151; background: #fdf5f3; font-size: 12px; padding: 10px 12px; border-radius: 5px; margin: 14px 0 0; }
+.management-page .button.danger { background: #c65050; color: white; border: 1px solid #c65050; }
+.management-page .button.danger:hover { background: #b84242; }
+.management-page .form-field input, .management-page .form-field textarea { border: 1px solid #e2e8f1; border-radius: 6px; padding: 10px 12px; background: #fff; font-size: 12px; width: 100%; }
+.reconnect-account { display: flex; align-items: center; gap: 12px; padding: 17px 0 3px; }
+.reconnect-account > div:last-child { display: flex; flex-direction: column; gap: 7px; }
+.reconnect-account b { color: #39465b; font-size: 14px; font-weight: 500; }
+.reconnect-account span { color: #98a1b1; font-size: 11px; }
+.knowledge-page { max-width: 1060px; }
+.knowledge-account-select { display: flex; align-items: center; gap: 11px; }
+.knowledge-account-select > span { font-size: 11px; color: #929cab; }
+.knowledge-account-select > div { position: relative; }
+.knowledge-account-select select { padding-right: 34px; min-width: 190px; appearance: none; background-color: #fff; }
+.knowledge-account-select svg { pointer-events: none; position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: #8d98aa; }
+.knowledge-context { display: flex; align-items: center; gap: 12px; margin: 32px 0 22px; }
+.knowledge-context > div:nth-child(2) { display: flex; flex-direction: column; gap: 5px; }
+.knowledge-context b { color: #46536a; font-size: 13px; font-weight: 500; }
+.knowledge-context > div > span { font-size: 10px; color: #9aa3b2; }
+.knowledge-context > .badge { font-size: 10px; margin-left: 5px; }
+.knowledge-demo-label { font-size: 10px; color: #a3abba; margin-left: auto; }
+.knowledge-section { margin-bottom: 19px; padding: 24px 28px; }
+.knowledge-section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 25px; gap: 20px; }
+.knowledge-section-title { display: flex; align-items: center; gap: 11px; }
+.module-icon { display: flex; align-items: center; justify-content: center; width: 37px; height: 37px; border-radius: 9px; background: #fff; color: #77736b; }
+.knowledge-section-title h2 { color: #364258; font-size: 15px; margin: 0 0 6px; font-weight: 600; }
+.knowledge-section-title p { margin: 0; color: #a2aab7; font-size: 10px; }
+.knowledge-section-header .button { font-size: 11px; min-height: 32px; padding: 7px 11px; }
+.knowledge-profile-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 42px; row-gap: 23px; margin: 0; }
+.knowledge-profile-grid > div:last-child { grid-column: 1/-1; }
+.knowledge-profile-grid dt, .communication-grid dt, .knowledge-product dt { font-size: 11px; color: #9aa3b2; margin-bottom: 7px; }
+.knowledge-profile-grid dd, .communication-grid dd, .knowledge-product dd { font-size: 12px; color: #59677d; margin: 0; line-height: 1.8; white-space: pre-wrap; overflow-wrap: anywhere; }
+.management-page .not-filled { color: #b7beca; }
+.knowledge-inline-empty { border-radius: 7px; background: #fff; padding: 23px; text-align: center; }
+.knowledge-inline-empty p { color: #9aa4b5; font-size: 12px; line-height: 1.8; margin: 0 0 12px; }
+.knowledge-inline-empty .button { color: #292824; font-size: 12px; }
+.module-count { color: #9da8b9; font-size: 11px; margin-left: 5px; font-weight: 400; }
+.knowledge-products { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.knowledge-product { border: 1px solid #e9edf3; border-radius: 9px; padding: 20px; min-width: 0; }
+.product-card-heading { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
+.product-file-icon { display: flex; color: #77736b; }
+.product-card-heading h3 { color: #3f506b; font-size: 14px; font-weight: 600; margin: 0; overflow-wrap: anywhere; }
+.product-card-heading .icon-button { margin-left: auto; color: #9da8b9; min-width: 26px; }
+.product-description { font-size: 11px; color: #929cad; line-height: 1.8; margin: 0 0 18px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.knowledge-product dl { margin: 0; display: flex; flex-direction: column; gap: 14px; border-top: 1px solid #f0f2f6; padding-top: 16px; }
+.knowledge-product dt { font-size: 10px; margin-bottom: 4px; }
+.knowledge-product dd { font-size: 11px; }
+.communication-grid { margin: 0; display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 27px; }
+.communication-grid > div + div { border-left: 1px solid #edf0f5; padding-left: 27px; }
+.knowledge-bottom-note { display: flex; align-items: center; gap: 9px; color: #92a1b9; font-size: 11px; margin: 22px 3px; }
+.knowledge-bottom-note > svg { color: #8ba2ca; flex-shrink: 0; }
+.knowledge-bottom-note p { margin: 0; line-height: 1.8; }
+.knowledge-bottom-note a { display: flex; align-items: center; gap: 3px; text-decoration: none; margin-left: auto; color: #292824; flex-shrink: 0; }
+.knowledge-editor { max-width: 690px; }
+.editor-intro { color: #929db0; font-size: 11px; line-height: 1.8; margin: 17px 0 22px; }
+.knowledge-editor-fields { grid-template-columns: 1fr 1fr; gap: 18px 22px; }
+.knowledge-editor-fields.single-column { grid-template-columns: 1fr; }
+.knowledge-editor-fields .full-width { grid-column: 1/-1; }
+.knowledge-editor .form-field { display: block; font-size: 11px; color: #738098; }
+.knowledge-editor .form-field input, .knowledge-editor .form-field textarea { display: block; margin-top: 9px; width: 100%; box-sizing: border-box; resize: vertical; font-size: 12px; line-height: 1.7; }
+.required-marker { color: #d68181; }
+.me-page { max-width: 1080px; }
+.personal-account { display: flex; align-items: center; padding: 26px 30px; gap: 18px; margin-bottom: 22px; }
+.personal-avatar { width: 58px; height: 58px; border-radius: 17px; background: #efeee9; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 500; color: #292824; }
+.personal-identity > div { display: flex; align-items: center; gap: 11px; }
+.personal-identity h2 { color: #3b4960; font-size: 17px; margin: 0; font-weight: 600; }
+.personal-identity .badge { font-size: 10px; }
+.personal-identity p { margin: 8px 0 0; font-size: 11px; color: #9aa5b7; }
+.personal-account > .button { margin-left: auto; font-size: 11px; color: #8390a6; }
+.personal-cards { display: grid; grid-template-columns: 1.15fr 1fr; gap: 22px; margin-bottom: 22px; }
+.plan-card, .wallet-card { padding: 25px 28px; }
+.personal-card-label { display: flex; align-items: center; gap: 8px; color: #7185a7; font-size: 12px; }
+.plan-title { display: flex; align-items: center; gap: 12px; margin: 22px 0 9px; }
+.plan-title h2 { margin: 0; color: #34445f; font-weight: 600; font-size: 24px; letter-spacing: -.5px; }
+.plan-title .badge { font-size: 9px; }
+.personal-card-description { color: #a0a9b8; font-size: 11px; line-height: 1.8; margin: 0; }
+.plan-details { display: flex; gap: 47px; margin: 24px 0; padding-top: 19px; border-top: 1px solid #edf0f5; }
+.plan-details > div { display: flex; flex-direction: column; gap: 10px; }
+.plan-details > div > span { color: #9ba5b5; font-size: 10px; }
+.plan-details strong { color: #60718c; font-size: 14px; font-weight: 500; }
+.plan-details small { color: #a2adbd; font-size: 10px; font-weight: 400; }
+.personal-cards .button { min-height: 33px; font-size: 11px; }
+.wallet-value { color: #50637f; font-size: 23px; letter-spacing: -.5px; margin: 24px 0 9px; font-weight: 500; }
+.wallet-notice { display: flex; align-items: center; gap: 10px; color: #7e96bd; margin: 23px 0; }
+.wallet-notice p { color: #9aa7bc; font-size: 10px; line-height: 1.9; margin: 0; }
+.usage-section { padding: 25px 28px 7px; }
+.usage-section .knowledge-section-header { margin-bottom: 24px; }
+.personal-usage-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 31px; padding-bottom: 27px; border-bottom: 1px solid #edf0f5; }
+.personal-usage-grid > div { display: flex; flex-direction: column; gap: 12px; padding-left: 25px; border-left: 1px solid #edf0f5; }
+.personal-usage-grid > div:first-child { padding-left: 0; border-left: none; }
+.personal-usage-grid span { color: #97a2b3; font-size: 11px; }
+.personal-usage-grid strong { color: #435471; font-size: 25px; font-weight: 600; }
+.personal-usage-grid small { color: #a3adbd; font-size: 12px; font-weight: 400; }
+.recent-usage-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9px; }
+.recent-usage-header h3 { color: #63738e; font-size: 12px; font-weight: 500; margin: 0; }
+.recent-usage-header > span { color: #b0b8c6; font-size: 10px; }
+.recent-usage-row { display: flex; align-items: center; gap: 12px; padding: 18px 0; color: #9ca8bb; text-decoration: none; border-bottom: 1px solid #f0f2f6; }
+.recent-usage-row:last-child { border-bottom: 0; }
+.recent-usage-row:hover .usage-record-name b { color: #292824; }
+.usage-record-icon { width: 32px; height: 32px; border-radius: 9px; background: #fff; color: #8ba0c2; display: flex; align-items: center; justify-content: center; }
+.usage-record-name { display: flex; flex-direction: column; gap: 7px; }
+.usage-record-name b { color: #697992; font-size: 11px; font-weight: 500; }
+.usage-record-name > span { font-size: 10px; color: #adb6c4; }
+.usage-record-data { display: flex; gap: 22px; margin-left: auto; margin-right: 19px; font-size: 10px; color: #a6b0bf; }
+.usage-record-data b { color: #71819a; font-weight: 500; }
+.recent-usage-row .badge { font-size: 9px; }
+.personal-modal { max-width: 490px; }
+.recharge-illustration { width: 78px; height: 78px; background: #eef3ff; border: 1px solid #efeee9; border-radius: 24px; color: #77736b; display: flex; align-items: center; justify-content: center; margin: 29px auto 24px; }
+.recharge-title { text-align: center; font-size: 17px; color: #53647f; font-weight: 500; margin: 0; }
+.benefits-list { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 23px; }
+.benefits-list > li { display: flex; gap: 12px; align-items: flex-start; }
+.benefits-list svg { color: #5c92b7; flex-shrink: 0; margin-top: 1px; }
+.benefits-list > li > div { display: flex; flex-direction: column; gap: 7px; }
+.benefits-list b { color: #62738e; font-size: 12px; font-weight: 500; }
+.benefits-list span { color: #a0adbf; font-size: 11px; line-height: 1.7; }
+@media (max-width: 1250px) {
+  .account-grid { gap: 13px; }
+  .account-card { padding: 20px 18px 0; }
+  .account-card h3 { font-size: 14px; }
+  .account-overview { padding: 23px; grid-template-columns: 1fr 1fr 1fr; }
+  .account-overview-note { display: none; }
+  .account-quota > div:first-child { gap: 4px; }
+  .account-quota strong { font-size: 18px; }
+  .account-quota > div > span { font-size: 10px; }
+  .plan-details { gap: 25px; }
+}
+@media (max-width: 1000px) {
+  .account-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .knowledge-account-select > span { display: none; }
+  .knowledge-section { padding: 22px; }
+  .knowledge-products { grid-template-columns: 1fr; }
+  .communication-grid { gap: 18px; }
+  .communication-grid > div + div { padding-left: 18px; }
+  .personal-cards { gap: 16px; }
+  .plan-card, .wallet-card { padding: 23px; }
+  .plan-details { gap: 20px; }
+  .plan-details strong { font-size: 12px; }
+  .plan-details strong small { display: block; margin-top: 6px; }
+  .usage-record-data { gap: 12px; margin-right: 0; }
+}
+@media (max-width: 760px) {
+  .management-page .page-header { flex-wrap: wrap; gap: 20px; }
+  .account-grid { grid-template-columns: 1fr; }
+  .account-overview { padding: 19px; }
+  .account-overview-item { padding-left: 17px; }
+  .account-overview-item > strong { font-size: 24px; }
+  .account-overview-item small { font-size: 11px; }
+  .knowledge-account-select, .knowledge-account-select > div, .knowledge-account-select select { width: 100%; }
+  .knowledge-context { flex-wrap: wrap; }
+  .knowledge-context .badge { display: none; }
+  .knowledge-profile-grid { grid-template-columns: 1fr; gap: 20px; }
+  .communication-grid { grid-template-columns: 1fr; }
+  .communication-grid > div + div { border-left: none; padding-left: 0; border-top: 1px solid #edf0f5; padding-top: 18px; }
+  .knowledge-editor-fields { grid-template-columns: 1fr; }
+  .personal-account { padding: 20px; flex-wrap: wrap; }
+  .personal-account > .button { margin-left: 76px; }
+  .personal-cards { grid-template-columns: 1fr; }
+  .personal-usage-grid { grid-template-columns: 1fr 1fr; gap: 25px 0; }
+  .personal-usage-grid > div:nth-child(3) { padding-left: 0; border-left: 0; }
+  .usage-section { padding: 22px; }
+  .usage-record-data { display: none; }
+  .recent-usage-row .badge { margin-left: auto; }
+  .recent-usage-header > span { display: none; }
+  .management-footnote { justify-content: flex-start; }
+}
