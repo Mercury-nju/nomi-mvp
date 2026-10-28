@@ -1,0 +1,14 @@
+*
+!api/
+!api/**
+!src/
+!src/**
+!public/
+!public/**
+!package.json
+!package-lock.json
+!index.html
+!tsconfig.json
+!vite.config.ts
+!vercel.json
+!.vercelignore

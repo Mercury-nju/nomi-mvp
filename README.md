@@ -1,46 +1,79 @@
-# Sales Personal Agent — MVP Prototype
+# Nomi — 抖音获客 Agent
 
-A desktop-first, Chinese-language interactive prototype based on `销售个人智能体_MVP_PRD_V1.0.docx`. Built with React, TypeScript, Vite, React Router, and Lucide icons.
+Nomi 将自然语言需求、公开内容观察、证据判断和触达串成一条可追溯流程。现有 React 工作台已接入本地 Python 执行服务，默认从空数据开始；不会用演示客户补齐真实结果。
 
-## Run locally
+## 快速启动
 
-Use Node.js 20.19+ or 22.12+.
-
-```sh
-npm install
-npm run dev
-```
-
-Open the local URL printed by Vite. The default port is 5173; Vite selects another available port if necessary.
+需要 Node.js 20.19+ / 22.12+、Python 3.11+。Windows 默认使用本机 Microsoft Edge。
 
 ```sh
-npm run build    # Type-check and create dist/
-npm run preview  # Serve the production build locally
-npm test         # Run domain and conversation-parser tests
+npm ci
+npm run setup
+npm run build
+npm start
 ```
 
-## Demo scenarios
+访问 http://127.0.0.1:8765 。开发时运行 `npm run dev`，访问 http://127.0.0.1:5173，前后端会一起启动。
 
-Reset the demo before a scenario when you need the original allocations. All names, execution records, limits, and package details are demonstration data.
+其他系统可安装 Chromium：`npm run setup -- --chromium`，并设置 `NOMI_BROWSER_CHANNEL=chromium`。如果 Python 不在默认路径，通过 `NOMI_BOOTSTRAP_PYTHON` 指定 Python 3.11+ 的完整路径，再执行安装。
 
-1. **Create a task with an allocation conflict.** Select `杭州医美顾问小林` (A1) in Chat. Enter `再创建玻尿酸潜客任务，每天私信 20 人`. Complete the requirement fields, confirm the plan, and authorize its simulated outreach. A1 already reserves 50/50. In the conflict card, change `热玛吉潜客挖掘` from 30 to 20 and `超声炮潜客挖掘` from 20 to 10; keep the new task at 20. Confirm once. All allocations update together, and the new task starts with zero results.
-2. **Create a find-only task.** Repeat the A1 conflict flow and choose `仅创建找客任务`. The new task reserves zero contacts per day and produces no fabricated outreach results.
-3. **Adjust, pause, and resume a task.** In Real-time Work (`实时工作`), open `热玛吉潜客挖掘` (T1) and choose `调整任务`. Change the daily contact plan to 10 in the associated conversation and confirm the before/after card. Return to the task, pause it, then resume it. Historical results remain intact; paused tasks retain their allocation.
-4. **Recover a disconnected account.** In Douyin Accounts (`抖音账号`), find `本地装修小陈` (A3), choose `重新登录`, acknowledge the simulation, and confirm. The account reconnects, previously enabled tasks recover, and historical records remain unchanged. No missed messages are sent retroactively. Connected accounts also support sign-out with explicit confirmation.
-5. **Use account-specific knowledge.** In Knowledge (`知识库`), select A1, edit the `热玛吉` product description or communication style, and save. Return to A1 Chat to see the saved context used by subsequent suggestions and message previews. Switch to A2 and verify that its knowledge and conversations remain separate. Previously sent records and task settings do not change.
+## 使用流程
 
-## State and reset
+1. 在账号管理点击“打开浏览器登录”，完成抖音登录；返回检查真实登录状态。遇到图形验证时，可打开“页面处理”，查看当前截图并完成点击或拖动。
+2. 在知识库填写业务身份、服务地区、沟通语气等真实资料。
+3. 在提需求描述要找的人，检查生成的结构化方案。来源支持关键词作品评论、指定账号作品评论、直播弹幕。
+4. 配置标题筛选、作品/评论预算、候选人数上限、目标匹配人数、直播时长和执行时间。
+5. 选择仅找客，或明确授权任务按指定渠道触达。保存不代表立即执行；点击“确认并立即执行”启动一轮。
+6. 在任务中心查看实际进度、跳过/失败原因、暂停/停止与历史记录。任务可调整，历史证据保留。
+7. 在结果中心查看公开主页、原始发言、判断和待核实项。单个客户可生成、编辑并发送一条消息；发送记录注明实际渠道与页面核验结果。
+8. 在“私信承接”加入已知客户，首次“同步消息”只建立历史基线。默认建议回复，不自动发送。开启会话观察后可周期读取这些会话；逐会话勾选授权才能自动承接后续新观察到的消息。
 
-- The prototype stores its shared state in this browser origin's `localStorage`, using the key `sales-agent-demo-v1`.
-- Each Douyin account has separate conversations, knowledge, and tasks. Work and Results can also show all accounts.
-- Refreshing preserves changes. Separate browser profiles, private sessions, and different local ports have independent storage.
-- To restore the five tasks and three accounts from the PRD, open `/?reset=demo` on the same origin. This removes the saved state and reloads the baseline. The reset query is removed afterward.
-- Reset is a development/demo mechanism, not a main navigation item.
+私信承接支持双方消息记录、规则建议、手动发送、按会话自动回复、人工接管、拒绝后停止及未知发送的人工核查。规则仅处理问候、已配置服务介绍和明确咨询等有限场景；报价、无法理解的内容和媒体消息转人工。目前只观察手动加入的已知客户可见窗口，不是整个账号的全量收件箱。监听与找客采用分时执行：开启监听会暂停找客，停止监听后需手动恢复原任务。服务重启后监听关闭，不会自行补发。
 
-## Boundaries
+目标人数是希望找到的匹配人数，不是保证。Agent 会在观察时长或采集预算用完时结束，并如实显示不足人数。隐私内容、不可访问内容和无法核对身份的发言会跳过。
 
-No real Douyin login, private messages, AI model, external API, product authentication, or payment service is connected. Connection and recharge dialogs are explicitly simulated. The product sign-out/re-entry flow only controls this local demo session. No secrets or API keys are required.
+## 模型配置
 
-Natural-language interpretation uses a deterministic Chinese rule parser, not an LLM. It recognizes selected business topics, saved product names, common cities, contact counts, and **daily** execution times. Other recurrence rules and arbitrary requests may need manual correction in the confirmation form. The prototype does not run a background scheduler or generate live customer results; execution history is seeded demonstration data. Results use customer discovery cohorts, while today's contact counts use actual seeded contact-event dates.
+复制 `.env.example` 为 `.env`。模型配置仅由后端读取，密钥不进入页面。
 
-Formal pricing, platform safety limits, production authentication, backend scheduling, integrations, and deployment are outside this delivery. Production hosting must serve `index.html` for client-side routes such as `/chat` and `/work/T1`.
+```dotenv
+NOMI_LLM_BASE_URL=https://your-provider.example/v1
+NOMI_LLM_MODEL=your-model
+NOMI_LLM_API_KEY=your-key
+```
+
+支持兼容 Chat Completions 的 JSON 输出服务。未配置或服务失败时，计划、判断和话术使用明确的保守规则；复杂条件会保留“待核实”，而不是假装具备通用语义理解。
+
+`NOMI_BROWSER_PROFILE` 可指向已有且未被其他浏览器占用的资料目录。`NOMI_BROWSER_CDP` 可连接已有 loopback 调试实例；Agent 不会关闭外部浏览器。不要把日常浏览器正在使用的目录同时交给两个进程。
+
+## 架构
+
+- **规划层**：解析需求、提出缺项、生成结构化方案、按公开证据逐项判断、结合业务资料生成草稿。
+- **编排层**：执行状态机、单浏览器任务队列、一次性/每日调度、取消、持久化、重启恢复、幂等发送。
+- **工具层**：Playwright 读取真实公开页面、手动登录、主页解析、原生消息操作与页面回显核验。
+- **事实层**：SQLite 保存任务、执行、来源、分任务判断和消息；截图保存在本地。按可靠平台标识去重，原始证据与推断分开。
+- **交互层**：保留 Nomi 五项工作区，通过本地 API 读取真实进度与结果，不用 localStorage 伪装执行。
+
+详细模块图和边界见 [架构说明](docs/agent-architecture.md)。API 文档在服务启动后的 `/docs`。
+
+## 数据与恢复
+
+默认目录 `.data/` 包含 SQLite、证据与独立浏览器登录资料，均已排除出 Git。停止服务后备份整个目录可以保留工作记录。旧纯前端原型源码保留，原说明在 `docs/prototype-README.md`，不会自动将旧演示数据转为真实记录。
+
+私信提交后会重新打开目标会话，严格核对平台身份和完整外发原文；仅有本地发送气泡不计为最终成功。未取得重开确认时标记“状态待确认”。客户详情提供“复核发送记录”，保留原始回执、复核历史和证据，不自动补发。
+
+消息在提交前先记录发送尝试；重复提交同一客户、渠道和内容不会再次发送。服务中断或页面无法确认时标记“状态未知”，不自动重发。页面显示已发送不等于平台已送达或对方已读。
+
+本版是本机单用户、单抖音会话实现，不含产品付费、多人 CRM 或平台官方发送接口。私信承接使用浏览器页面读取；自动留资、全账号陌生私信自动发现尚未实现，不会伪造回复或留资统计。规则对话模块暂不使用可选模型接口；配置模型不会自动扩大对话理解范围。
+
+## 验证
+
+```sh
+npm test                 # 前端及原有领域规则
+npm run test:server      # 持久化、规划、取消、恢复、发送幂等及本地DOM
+npm run build            # TypeScript + 生产构建
+```
+
+适配器测试使用隔离浏览器和本地页面，测试替身不参与正式运行。真实平台验证记录、用户名单和消息证据仅保存在本机，不随仓库提交。作品/评论可见性和页面结构会变化；工具失效返回真实原因，不生成替代客户或发送成功回执。
+
+页面处理工具提供截图观察和有范围限制的点击/拖动，供视觉 Agent 或用户操作。规则模式本身不具备图像识别能力，不承诺无人值守完成所有验证码。当前实现不依赖本机失效的原生 Computer Use 运行库，实际验证采用浏览器可见页面与鼠标操作。

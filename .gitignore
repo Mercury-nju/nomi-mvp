@@ -7,3 +7,23 @@ dist/
 !.env.example
 
 ._*
+
+.venv/
+.data/
+__pycache__/
+.pytest_cache/
+*.sqlite*
+artifacts/
+.vercel/
+
+# Local acceptance material contains real customer/profile/message evidence.
+public/reports/
+docs/find-to-dm-verification.md
+docs/verification.md
+scripts/*-readonly.py
+scripts/capture-*.py
+scripts/build-prospect-report.py
+scripts/verify-consented-dm-readback.py
+scripts/verify-eight-consented-dms.py
+scripts/verify-product-dm-receipts.py
+scripts/verify-user-input.mjs
